@@ -16,16 +16,16 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/PointController")
 public class PointController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	private PointService pointService;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public PointController() {
-        super();
-        pointService = new PointService();
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public PointController() {
+		super();
+		pointService = new PointService();
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -59,6 +59,21 @@ public class PointController extends HttpServlet {
 			
 		}else if(command.equals("/pointAdd")) {
 			if(method.equals("POST")) {
+				PointDTO pointDTO = new PointDTO();
+				pointDTO.setName(request.getParameter("name"));
+				pointDTO.setNum(Integer.parseInt(request.getParameter("num")));
+				pointDTO.setKor(Integer.parseInt(request.getParameter("kor")));
+				pointDTO.setEng(Integer.parseInt(request.getParameter("eng")));
+				pointDTO.setMath(Integer.parseInt(request.getParameter("math")));
+				
+				int result = pointService.pointAdd(pointDTO);
+				
+				
+				if(result>0) {
+					check=false;
+					path="./pointList";
+				}
+				
 				
 			}else {
 				check=true;
@@ -112,9 +127,11 @@ public class PointController extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
