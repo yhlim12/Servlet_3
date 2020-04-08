@@ -1,5 +1,6 @@
-	<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +31,8 @@
 						<li><a href="#">Page 1-2</a></li>
 						<li><a href="#">Page 1-3</a></li>
 					</ul></li>
-				<li><a href="${pageContext.request.contextPath}/point/pointList">Point</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/point/pointList">Point</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
@@ -42,7 +44,7 @@
 	</nav>
 	<!-- Nav -->
 
-	
+
 	<div class="container">
 		<div class="jumbotron">
 			<h1>Bootstrap Tutorial</h1>
@@ -58,34 +60,30 @@
 		<form action="./pointAdd" method="post">
 			<div class="form-group">
 				<label for="Name">Name:</label> <input type="text"
-					class="form-control" id="name" placeholder="Enter Name"
-					name="name">
+					class="form-control" id="name" placeholder="Enter Name" name="name">
 			</div>
-			
+
 			<div class="form-group">
 				<label for="Num">Num:</label> <input type="text"
-					class="form-control" id="num" placeholder="Enter Number"
-					name="num">
+					class="form-control" id="num" placeholder="Enter Number" name="num">
 			</div>
-			
+
 			<div class="form-group">
 				<label for="Kor">Kor:</label> <input type="text"
-					class="form-control" id="kor" placeholder="Enter Kor"
-					name="kor">
+					class="form-control" id="kor" placeholder="Enter Kor" name="kor">
 			</div>
-			
+
 			<div class="form-group">
 				<label for="Eng">Eng:</label> <input type="text"
-					class="form-control" id="eng" placeholder="Enter Eng"
-					name="eng">
+					class="form-control" id="eng" placeholder="Enter Eng" name="eng">
 			</div>
-			
+
 			<div class="form-group">
 				<label for="Math">Math:</label> <input type="text"
-					class="form-control" id="math" placeholder="Enter Math"
-					name="math">
+					class="form-control" id="math" placeholder="Enter Math" name="math">
 			</div>
-			
+
 			<button type="submit" class="btn btn-default">Submit</button>
+	
 </body>
 </html>
