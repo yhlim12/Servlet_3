@@ -9,6 +9,30 @@ import com.iu.util.DBConnect;
 
 public class PointDAO {
 	//DAO (DATA Access Object)
+	
+	//5.Update
+	public int pointMod(PointDTO pointDTO)throws Exception{
+		Connection con = DBConnect.getConnect();
+		String sql = "UPDATE point set name =?, kor=?, eng=?, math=?, total=?, avg=? where num= ?";
+		PreparedStatement st = con.prepareStatement(sql);
+		
+		st.setString(1, pointDTO.getName());
+		st.setInt(2, pointDTO.getKor());
+		st.setInt(3, pointDTO.getEng());
+		st.setInt(4, pointDTO.getMath());
+		st.setInt(5, pointDTO.getTotal());
+		st.setDouble(6, pointDTO.getAvg());
+		st.setInt(7, pointDTO.getNum());
+		
+		int result = st.executeUpdate();
+		st.close();
+		con.close();
+		
+		return result;
+		
+		
+	}
+	
 	//4.Add
 	public int pointAdd(PointDTO pointDTO)throws Exception{
 		Connection con = DBConnect.getConnect();
@@ -117,7 +141,6 @@ public class PointDAO {
 	}
 	
 
-	//4. Update
 	
 	
 	

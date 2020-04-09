@@ -82,8 +82,7 @@
 				<label for="Math">Math:</label> <input type="text"
 					class="form-control" id="math" placeholder="Enter Math" name="math">
 			</div>
-
+			
 			<button type="submit" class="btn btn-default">Submit</button>
-	
 </body>
 </html>
