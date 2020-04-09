@@ -116,10 +116,7 @@ public class PointDAO {
 		return ar;
 	}
 	
-	
-	
-	//3. Insert
-	
+
 	//4. Update
 	
 	
