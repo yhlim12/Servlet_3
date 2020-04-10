@@ -138,7 +138,7 @@ public class MemberController extends HttpServlet {
 					
 					path="../WEB-INF/views/member/memberUpdate.jsp";
 				}
-			}
+			}	
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
