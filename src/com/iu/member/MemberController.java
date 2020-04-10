@@ -95,14 +95,49 @@ public class MemberController extends HttpServlet {
 				check=false;
 				path="../";
 			}else if(command.equals("/memberMypage")) {
-				if(method.equals("POST")) {
-				MemberDTO memberDTO = new MemberDTO();
-				memberDTO.setId(request.getParameter("dto"));
-				}
 				
+				path="../WEB-INF/views/member/memberMypage.jsp";
 				
 			}else if(command.equals("/memberDelete")) {
+				HttpSession session = request.getSession();
+				//MemberDTO memberDTO = new MemberDTO();
+				//String id = request.getParameter("id");
+				//memberDTO.setId(id);
 				
+				MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+				
+				int result = memberService.memberDelte(memberDTO);
+				if(result>0) {
+					session.invalidate();
+					
+				}
+				check=false;
+				path="../";
+				
+			}else if(command.equals("/memberUpdate")) {
+				if(method.equals("POST")) {
+					HttpSession session = request.getSession();
+					MemberDTO memberDTO = new MemberDTO();
+					
+					memberDTO.setName(request.getParameter("name"));
+					memberDTO.setPhone(request.getParameter("phone"));
+					memberDTO.setEmail(request.getParameter("email"));
+					memberDTO.setAge(Integer.parseInt(request.getParameter("age")));
+					memberDTO.setId(request.getParameter("id"));
+					
+					int result= memberService.memberUpdate(memberDTO);
+					System.out.println(result);
+					
+					session.setAttribute("member", memberDTO);
+					
+					path="../WEB-INF/views/member/memberMypage.jsp";
+					
+					
+				}
+				else {
+					
+					path="../WEB-INF/views/member/memberUpdate.jsp";
+				}
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

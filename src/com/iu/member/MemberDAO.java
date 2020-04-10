@@ -8,15 +8,40 @@ import com.iu.util.DBConnect;
 
 public class MemberDAO {
 	
-	/*
-	 * public MemberDTO memberMypage(MemberDTO memberDTO) throws Exception{
-	 * Connection con = DBConnect.getConnect(); String
-	 * sql="select * from member where id=?"; PreparedStatement st =
-	 * con.prepareStatement(sql);
-	 * 
-	 * st.setString(1, memberDTO.getId()); ResultSet rs = st.executeQuery();
-	 * if(rs.next()) { memberDTO.setName(rs.getString("name")); } }
-	 */
+	public int memberUpdate(MemberDTO memberDTO)throws Exception{
+		Connection con = DBConnect.getConnect();
+		String sql="UPDATE member SET name=?,phone=?,email=?,age=? where id=?";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setString(1, memberDTO.getName());
+		st.setString(2, memberDTO.getPhone());
+		st.setString(3, memberDTO.getEmail());
+		st.setInt(4, memberDTO.getAge());
+		st.setString(5, memberDTO.getId());
+		
+		int result = st.executeUpdate();
+		
+		st.close();
+		con.close();
+		
+		return result;
+	}
+	
+	public int memberDelete(MemberDTO memberDTO) throws Exception{
+		Connection con = DBConnect.getConnect();
+		String sql= "Delete member where id=?";
+		
+		PreparedStatement st = con.prepareStatement(sql);
+		
+		st.setString(1, memberDTO.getId());
+		
+		int result = st.executeUpdate();
+		
+		st.close();
+		con.close();
+		
+		return result;
+		
+	}
 	
 	public MemberDTO memberLogin(MemberDTO memberDTO) throws Exception{
 		

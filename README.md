@@ -13,7 +13,7 @@
   - /WEb-INF/views/member/...
   
 ## URL 주소				/	JSP				/ Method
-### /WEB-INF/views/point/**
+### /WEB-INF/views/point/
 /member/memberJoin		/ memberJoin.jsp	/ GET
 /member/memberJoin		/					/ POST
 /member/memberLogin		/ memberLogin.jsp	/ GET
