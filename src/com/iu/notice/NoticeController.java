@@ -36,7 +36,7 @@ public class NoticeController extends HttpServlet {
 		// pathInfo
 		String command = request.getPathInfo();
 
-		// Method 형식
+		// Method �삎�떇
 		String method = request.getMethod();
 		boolean check = true;
 		String path = "";
@@ -69,7 +69,8 @@ public class NoticeController extends HttpServlet {
 						
 					noticeService.noticeAdd(noticeDTO);
 				
-					path="../WEB-INF/views/notice/noticeList.jsp";
+					check=false;
+					path="./noticeList";
 				
 				}else {
 					
@@ -89,7 +90,9 @@ public class NoticeController extends HttpServlet {
 				System.out.println(noticeDTO.getTitle());
 				
 				int result = noticeService.noticeMod(noticeDTO);
-				path= "../WEB-INF/views/notice/noticeList.jsp";
+				check=false;
+				path="./noticeList";
+				/* path= "../WEB-INF/views/notice/noticeList.jsp"; */
 					
 				
 				}else {

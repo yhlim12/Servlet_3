@@ -17,30 +17,30 @@ public class DBConnect {
 	}
 	
 	public static Connection getConnect() throws Exception{
-		//1. 로그인 정보 4가지 (user,password,url,driver)
+		//1. 濡쒓렇�씤 �젙蹂� 4媛�吏� (user,password,url,driver)
 		
 		//logon deny
-		//1. ID/PW가 틀렸을 경우
-		//2. DB에 해당 유저가 생성되지 않은 경우
-		//3. 유저의 권한이 적용 되지 않은 경우
+		//1. ID/PW媛� ���졇�쓣 寃쎌슦
+		//2. DB�뿉 �빐�떦 �쑀��媛� �깮�꽦�릺吏� �븡�� 寃쎌슦
+		//3. �쑀���쓽 沅뚰븳�씠 �쟻�슜 �릺吏� �븡�� 寃쎌슦
 		String user = "user02";
 		String password= "user02";
 		
 		//not connect
-		//1. ip, port, xe 정보가 틀린 경우
-		//2. 물리적으로 연결이 안되거나, 서버가 종료된 경우
-		//3. Listener문제 , DB 재시동
-		String url = "jdbc:oracle:thin:@192.168.56.102:1521:xe";
+		//1. ip, port, xe �젙蹂닿� ��由� 寃쎌슦
+		//2. 臾쇰━�쟻�쑝濡� �뿰寃곗씠 �븞�릺嫄곕굹, �꽌踰꾧� 醫낅즺�맂 寃쎌슦
+		//3. Listener臾몄젣 , DB �옱�떆�룞
+		String url = "jdbc:oracle:thin:@192.168.56.101:1521:xe";
 		String driver="oracle.jdbc.driver.OracleDriver";
 		
-		//2. 드라이버를 메모리에 로딩
+		//2. �뱶�씪�씠踰꾨�� 硫붾え由ъ뿉 濡쒕뵫
 		//class not found Exception
-		//1. driver명이 틀린 경우
-		//2. jdbc API(ojdbc6.jar)가 없는 경우
+		//1. driver紐낆씠 ��由� 寃쎌슦
+		//2. jdbc API(ojdbc6.jar)媛� �뾾�뒗 寃쎌슦
 		
 		Class.forName(driver);
 		
-		//3. 로그인 후 Connection 객체 반환
+		//3. 濡쒓렇�씤 �썑 Connection 媛앹껜 諛섑솚
 		Connection con = DriverManager.getConnection(url, user, password);
 		return con;
 	}
