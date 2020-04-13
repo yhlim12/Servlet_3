@@ -33,7 +33,7 @@ public class NoticeController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 
-		// pathInfo
+		// pathInfo12
 		String command = request.getPathInfo();
 
 		// Method �삎�떇
@@ -43,6 +43,7 @@ public class NoticeController extends HttpServlet {
 		
 		try {
 			if(command.equals("/noticeList")) {
+				
 				ArrayList<NoticeDTO> ar = noticeService.noticeList();
 				request.setAttribute("list", ar);
 				

@@ -29,7 +29,6 @@
 				<label for="name">이름:</label> <input type="text"
 					class="form-control" id="name" placeholder="Enter Name" name="name">
 			</div>
-
 			
 			
 			<button type="submit" class="btn btn-default">작성완료</button>

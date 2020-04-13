@@ -35,6 +35,9 @@ public class MemberController extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
+		
+		getServletConfig().getInitParameter(""); // 현재 Servlet의 객체 저장
+		getServletContext().getInitParameter(""); // 전체 정보 저장하는 객체(application, Context)
 
 		// pathInfo
 		String command = request.getPathInfo();

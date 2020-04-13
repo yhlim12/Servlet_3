@@ -37,7 +37,7 @@
 			</table>
 	<!-- 맴버가 널이 아니면 -->
 	
-	<c:if test="${member.name eq 'admin'}">
+	<c:if test="${member.id eq 'admin'}">
 		<a href="./noticeAdd" class="btn btn-primary">글쓰기</a>
 	</c:if>
 

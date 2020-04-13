@@ -36,7 +36,7 @@
 			
 		</table>
 		
-		<c:if test="${member.name eq 'admin'}">
+		<c:if test="${member.id eq 'admin'}">
 			<a href="./noticeMod?seq=${dto.seq}" class="btn btn-primary" role="button">Update</a>
 			<a href="./noticeDelete?seq=${dto.seq}" class="btn btn-danger" role="button">Delete</a>
 		</c:if>
