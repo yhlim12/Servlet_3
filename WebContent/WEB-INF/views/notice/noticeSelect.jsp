@@ -36,8 +36,10 @@
 			
 		</table>
 		
-		<a href="./noticeMod?seq=${dto.seq}" class="btn btn-primary" role="button">Update</a>
-	
+		<c:if test="${member.name eq 'admin'}">
+			<a href="./noticeMod?seq=${dto.seq}" class="btn btn-primary" role="button">Update</a>
+			<a href="./noticeDelete?seq=${dto.seq}" class="btn btn-danger" role="button">Delete</a>
+		</c:if>
 		
 	</div>
 </div>

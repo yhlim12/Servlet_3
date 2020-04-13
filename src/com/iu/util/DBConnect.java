@@ -30,7 +30,7 @@ public class DBConnect {
 		//1. ip, port, xe �젙蹂닿� ��由� 寃쎌슦
 		//2. 臾쇰━�쟻�쑝濡� �뿰寃곗씠 �븞�릺嫄곕굹, �꽌踰꾧� 醫낅즺�맂 寃쎌슦
 		//3. Listener臾몄젣 , DB �옱�떆�룞
-		String url = "jdbc:oracle:thin:@192.168.56.101:1521:xe";
+		String url = "jdbc:oracle:thin:@192.168.56.102:1521:xe";
 		String driver="oracle.jdbc.driver.OracleDriver";
 		
 		//2. �뱶�씪�씠踰꾨�� 硫붾え由ъ뿉 濡쒕뵫

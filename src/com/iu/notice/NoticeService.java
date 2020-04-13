@@ -27,4 +27,8 @@ public class NoticeService {
 		return result;
 	}
 	
+	public int noticeDelete(int seq)throws Exception{
+		return noticeDAO.noticeDelete(seq);
+	}
+	
 }

@@ -102,5 +102,19 @@ public class NoticeDAO {
 		return result;
 		
 	}
+	
+	public int noticeDelete(int seq) throws Exception{
+		Connection con = DBConnect.getConnect();
+		String sql="delete notice where seq=?";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setInt(1, seq);
+		
+		int result=st.executeUpdate();
+		
+		st.close();
+		con.close();
+		
+		return result;
+	}
 	 
 }

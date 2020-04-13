@@ -103,6 +103,14 @@ public class NoticeController extends HttpServlet {
 				}
 				
 		
+			}else if(command.equals("/noticeDelete")){
+				int seq = Integer.parseInt(request.getParameter("seq"));
+				int result = noticeService.noticeDelete(seq);
+				
+				if(result>0) {
+					check =false;
+					path="./noticeList";
+				}
 			}
 			
 		}catch (Exception e) {
